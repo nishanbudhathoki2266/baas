@@ -132,6 +132,15 @@ function Header() {
               className="w-12 pl-2 text-lg outline-none text-maroon"
             />
           </div>
+          <div className="flex items-center">
+            <button
+              className="flex-grow text-gray-500"
+              onClick={() => setSearchInput("")}
+            >
+              Cancel
+            </button>
+            <button className="flex-grow text-maroon">Search</button>
+          </div>
         </div>
       )}
     </header>
