@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner";
 import Header from "@/components/Header";
+import LargeCard from "@/components/LargeCard";
 import MediumCard from "@/components/MediumCard";
 import SmallCard from "@/components/SmallCard";
 import React from "react";
@@ -36,6 +37,11 @@ const Home = ({ exploreData, cardsData }) => {
               <MediumCard key={item.img} item={item} />
             ))}
           </div>
+        </section>
+
+        {/* Large card - banner */}
+        <section>
+          <LargeCard />
         </section>
       </main>
     </div>
