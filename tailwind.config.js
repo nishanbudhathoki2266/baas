@@ -11,6 +11,7 @@ module.exports = {
         primary: "#fcde67",
         secondary: "#5bccf6",
         text: "#030e12",
+        maroon: "#A24857",
       },
       fontFamily: {
         openSans: ["var(--font-openSans)"],
