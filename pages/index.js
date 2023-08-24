@@ -26,6 +26,10 @@ const Home = ({ exploreData, cardsData }) => {
           </div>
         </section>
 
+        <section>
+          <LargeCard img={"/images/girl.jpg"} />
+        </section>
+
         {/* Live anywhere section  */}
         <section>
           <h2 className="text-4xl text-text font-bold tracking-tighter py-8">
