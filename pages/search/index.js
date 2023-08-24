@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import { format } from "date-fns";
+import InfoCard from "@/components/InfoCard";
 
-function SearchPage() {
+function SearchPage({ searchResults }) {
   const router = useRouter();
   const { location, startDate, endDate, numGuests } = router.query;
   const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
@@ -9,7 +10,7 @@ function SearchPage() {
   const range = `${formattedStartDate} - ${formattedEndDate}`;
 
   return (
-    <main className="flex">
+    <main>
       <section className="flex-grow pt-14 px-6">
         <p className="text-xs">
           400+ stays - {range} - for {numGuests} guest/s
@@ -24,9 +25,25 @@ function SearchPage() {
           <p className="button">Rooms and beds</p>
           <p className="button">More filters</p>
         </div>
+
+        <div className="flex flex-col">
+          {searchResults.map((item) => (
+            <InfoCard key={item.img} item={item} />
+          ))}
+        </div>
       </section>
     </main>
   );
+}
+
+export async function getServerSideProps() {
+  const response = await fetch(`https://www.jsonkeeper.com/b/5NPS`);
+  const searchResults = await response.json();
+  return {
+    props: {
+      searchResults,
+    },
+  };
 }
 
 export default SearchPage;

@@ -4,11 +4,11 @@ import Header from "@/components/Header";
 import LargeCard from "@/components/LargeCard";
 import MediumCard from "@/components/MediumCard";
 import SmallCard from "@/components/SmallCard";
-import React from "react";
+import React, { Fragment } from "react";
 
 const Home = ({ exploreData, cardsData }) => {
   return (
-    <div className="font-openSans">
+    <Fragment>
       <Banner />
 
       <main className="max-w-7xl mx-auto px-8 sm:px-16">
@@ -48,7 +48,7 @@ const Home = ({ exploreData, cardsData }) => {
           <LargeCard img={"/images/home.jpg"} />
         </section>
       </main>
-    </div>
+    </Fragment>
   );
 };
 

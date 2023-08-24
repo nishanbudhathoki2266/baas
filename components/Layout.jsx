@@ -5,9 +5,11 @@ import Footer from "./Footer";
 function Layout({ children }) {
   return (
     <Fragment>
-      <Header />
-      {children}
-      <Footer />
+      <div className="font-openSans">
+        <Header />
+        {children}
+        <Footer />
+      </div>
     </Fragment>
   );
 }
