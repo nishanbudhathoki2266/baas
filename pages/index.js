@@ -9,7 +9,6 @@ import React from "react";
 const Home = ({ exploreData, cardsData }) => {
   return (
     <div className="font-openSans">
-      <Header />
       <Banner />
 
       <main className="max-w-7xl mx-auto px-8 sm:px-16">
@@ -49,8 +48,6 @@ const Home = ({ exploreData, cardsData }) => {
           <LargeCard img={"/images/home.jpg"} />
         </section>
       </main>
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };
