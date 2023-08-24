@@ -1,10 +1,8 @@
+import React, { Fragment } from "react";
 import Banner from "@/components/Banner";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import LargeCard from "@/components/LargeCard";
 import MediumCard from "@/components/MediumCard";
 import SmallCard from "@/components/SmallCard";
-import React, { Fragment } from "react";
 
 const Home = ({ exploreData, cardsData }) => {
   return (

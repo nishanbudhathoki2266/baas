@@ -1,6 +1,6 @@
 function Banner() {
   return (
-    <div className="bg-primary h-[30dvh] sm:h-[40dvh] lg:h-[50dvh] xl:h-[60dvh] 2xl:h-[70dvh] p-2 flex flex-col gap-2 sm:gap-6 justify-center items-start sm:items-center ">
+    <div className="bg-primary min-h-[30dvh] sm:min-h-[40dvh] lg:min-h-[50dvh] xl:min-h-[60dvh] 2xl:min-h-[70dvh] p-2 flex flex-col gap-2 sm:gap-6 justify-center items-start sm:items-center ">
       <h1 className="text-4xl md:text-6xl banner font-extrabold">
         Find <span className="text-maroon">Homes</span>, Chase
         <span className="text-maroon"> Dreams</span>
