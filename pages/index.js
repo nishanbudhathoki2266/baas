@@ -1,11 +1,12 @@
+import Banner from "@/components/Banner";
 import Header from "@/components/Header";
 import React from "react";
 
 const Home = () => {
   return (
-    <div className="">
+    <div className="font-openSans">
       <Header />
-      {/* Banner */}
+      <Banner />
     </div>
   );
 };
