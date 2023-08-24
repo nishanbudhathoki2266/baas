@@ -42,7 +42,7 @@ const Home = ({ exploreData, cardsData }) => {
 
         {/* Large card - banner */}
         <section>
-          <LargeCard />
+          <LargeCard img={"/images/home.jpg"} />
         </section>
       </main>
       {/* Footer */}
