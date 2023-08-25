@@ -1,6 +1,19 @@
 import { useRouter } from "next/router";
 import { format } from "date-fns";
+
+import { GoogleMap, LoadScript } from "@react-google-maps/api";
+
 import InfoCard from "@/components/InfoCard";
+
+const containerStyle = {
+  width: "100%",
+  height: "100%",
+};
+
+const center = {
+  lat: -3.745,
+  lng: -38.523,
+};
 
 function SearchPage({ searchResults }) {
   const router = useRouter();
@@ -10,7 +23,7 @@ function SearchPage({ searchResults }) {
   const range = `${formattedStartDate} - ${formattedEndDate}`;
 
   return (
-    <main className="flex flex-col lg:flex-row">
+    <main className="flex flex-col">
       <section className="flex-[1.4] pt-14 px-6">
         <p className="text-xs">
           400+ stays - {range} - for {numGuests} guest/s
@@ -32,8 +45,19 @@ function SearchPage({ searchResults }) {
           ))}
         </div>
       </section>
-      <section className="flex-[1]">
-        <div className="bg-red-900">I am a map</div>
+      <section className="flex-[1] h-[60dvh] w-[100vw] px-6">
+        <div className="bg-red-900 h-[60dvh]">
+          <LoadScript googleMapsApiKey={process.env.API_KEY}>
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={center}
+              zoom={10}
+            >
+              {/* Child components, such as markers, info windows, etc. */}
+              <></>
+            </GoogleMap>
+          </LoadScript>
+        </div>
       </section>
     </main>
   );
