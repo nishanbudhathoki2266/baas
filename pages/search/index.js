@@ -10,8 +10,8 @@ function SearchPage({ searchResults }) {
   const range = `${formattedStartDate} - ${formattedEndDate}`;
 
   return (
-    <main>
-      <section className="flex-grow pt-14 px-6">
+    <main className="flex flex-col lg:flex-row">
+      <section className="flex-[1.4] pt-14 px-6">
         <p className="text-xs">
           400+ stays - {range} - for {numGuests} guest/s
         </p>
@@ -31,6 +31,9 @@ function SearchPage({ searchResults }) {
             <InfoCard key={item.img} item={item} />
           ))}
         </div>
+      </section>
+      <section className="flex-[1]">
+        <div className="bg-red-900">I am a map</div>
       </section>
     </main>
   );
