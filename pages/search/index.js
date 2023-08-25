@@ -45,7 +45,7 @@ function SearchPage({ searchResults }) {
           ))}
         </div>
       </section>
-      <section className="flex-[1] h-[60dvh] w-[100vw] px-6">
+      <section className="flex-[1] h-[60dvh] w-[100vw] px-4">
         <div className="bg-red-900 h-[60dvh]">
           <LoadScript googleMapsApiKey={process.env.API_KEY}>
             <GoogleMap
