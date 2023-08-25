@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import { GoogleMap, LoadScript, MarkerF } from "@react-google-maps/api";
 
 import InfoCard from "@/components/InfoCard";
+import { useState } from "react";
 
 const containerStyle = {
   width: "100%",
@@ -19,10 +20,10 @@ function SearchPage({ searchResults }) {
 
   const { lat, long } = searchResults?.[0];
 
-  const center = {
+  const [center, setCenter] = useState({
     lat,
     lng: long,
-  };
+  });
 
   return (
     <main className="flex flex-col lg:flex-row">
