@@ -24,6 +24,7 @@ function SearchPage({ searchResults }) {
     lat,
     lng: long,
   });
+  const [zoom, setZoom] = useState(9);
 
   return (
     <main className="flex flex-col lg:flex-row">
@@ -54,7 +55,7 @@ function SearchPage({ searchResults }) {
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={center}
-              zoom={9}
+              zoom={zoom}
             >
               {searchResults.map((item) => (
                 <MarkerF
@@ -62,6 +63,10 @@ function SearchPage({ searchResults }) {
                   position={{
                     lat: item.lat,
                     lng: item.long,
+                  }}
+                  onClick={() => {
+                    setZoom(15);
+                    setCenter({ lat: item.lat, lng: item.long });
                   }}
                 />
               ))}
