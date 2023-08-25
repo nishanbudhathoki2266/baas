@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { format } from "date-fns";
 
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import { GoogleMap, LoadScript, MarkerF } from "@react-google-maps/api";
 
 import InfoCard from "@/components/InfoCard";
 
@@ -10,17 +10,19 @@ const containerStyle = {
   height: "100%",
 };
 
-const center = {
-  lat: -3.745,
-  lng: -38.523,
-};
-
 function SearchPage({ searchResults }) {
   const router = useRouter();
   const { location, startDate, endDate, numGuests } = router.query;
   const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
   const formattedEndDate = format(new Date(endDate), "dd MMMM yy");
   const range = `${formattedStartDate} - ${formattedEndDate}`;
+
+  const { lat, long } = searchResults?.[0];
+
+  const center = {
+    lat,
+    lng: long,
+  };
 
   return (
     <main className="flex flex-col lg:flex-row">
@@ -51,10 +53,17 @@ function SearchPage({ searchResults }) {
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={center}
-              zoom={10}
+              zoom={9}
             >
-              {/* Child components, such as markers, info windows, etc. */}
-              <></>
+              {searchResults.map((item) => (
+                <MarkerF
+                  key={item.img}
+                  position={{
+                    lat: item.lat,
+                    lng: item.long,
+                  }}
+                />
+              ))}
             </GoogleMap>
           </LoadScript>
         </div>
