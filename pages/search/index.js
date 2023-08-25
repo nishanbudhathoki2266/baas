@@ -23,7 +23,7 @@ function SearchPage({ searchResults }) {
   const range = `${formattedStartDate} - ${formattedEndDate}`;
 
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col lg:flex-row">
       <section className="flex-[1.4] pt-14 px-6">
         <p className="text-xs">
           400+ stays - {range} - for {numGuests} guest/s
@@ -45,9 +45,9 @@ function SearchPage({ searchResults }) {
           ))}
         </div>
       </section>
-      <section className="flex-[1] h-[60dvh] w-[100vw] px-4">
-        <div className="bg-red-900 h-[60dvh]">
-          <LoadScript googleMapsApiKey={process.env.API_KEY}>
+      <section className="flex-[1] px-4">
+        <div className="h-[60dvh] lg:h-full">
+          <LoadScript googleMapsApiKey="AIzaSyDLfjmFgDEt9_G2LXVyP61MZtVHE2M3H-0">
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={center}
