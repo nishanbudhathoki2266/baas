@@ -26,6 +26,15 @@ function SearchPage({ searchResults }) {
   });
   const [zoom, setZoom] = useState(9);
 
+  // For letting the user go to the location when a home is clicked
+  const handleHomeSelect = (lat, long) => {
+    setCenter({
+      lat: lat,
+      lng: long,
+    });
+    setZoom(18);
+  };
+
   return (
     <main className="flex flex-col lg:flex-row">
       <section className="flex-[1.4] pt-14 px-6">
@@ -45,7 +54,7 @@ function SearchPage({ searchResults }) {
 
         <div className="flex flex-col">
           {searchResults.map((item) => (
-            <InfoCard key={item.img} item={item} />
+            <InfoCard key={item.img} item={item} onClick={handleHomeSelect} />
           ))}
         </div>
       </section>
@@ -65,7 +74,7 @@ function SearchPage({ searchResults }) {
                     lng: item.long,
                   }}
                   onClick={() => {
-                    setZoom(15);
+                    setZoom(10);
                     setCenter({ lat: item.lat, lng: item.long });
                   }}
                 />
