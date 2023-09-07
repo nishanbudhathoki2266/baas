@@ -37,8 +37,8 @@ function SearchPage({ searchResults }) {
 
   return (
     <main className="flex flex-col lg:flex-row">
-      <section className="flex-[1.4] pt-14 px-6">
-        <p className="text-xs">
+      <section className="flex-[1] pt-14 px-6">
+        <p className="text-xs font-semibold">
           400+ stays - {range} - for {numGuests} guest/s
         </p>
         <h1 className="text-3xl font-semibold mt-2 mb-6">
